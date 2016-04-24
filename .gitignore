@@ -1,0 +1,5 @@
+CG1781_BaseUpdates.xlsx
+.DS_Store
+remap_data/
+*.bed
+.ipynb_checkpoints/
