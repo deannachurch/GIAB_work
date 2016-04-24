@@ -1,0 +1,30 @@
+Apr 24, 2016
+
+Attempt to create a bed file of single nucleotide sites for which there was no evidence for the
+reference allele in GRCh37 and were flipped to create a common, supported allele in GRCh38.
+
+Jupyter notebooks here:
+https://github.com/deannachurch/GIAB_work
+
+Data in a shared Google folder
+
+Files:
+GRCh37_GRCh38_flipped_sites.bed: bed file in GRCh37 coordinates created from a
+spreadsheet sent by Valerie (where InAGP == 'Y').
+
+GRCh38_GRCh37_flipped_sites.bed: bed file in GRCh38 coordinates created by using
+NCBI remap to translate the GRCh37 coordinates to GRCh38 coordinates.
+
+remap_data/*: this directory contains the raw outputs from the NCBI remap process.
+
+Workflow:
+CreateGRCh37_GRCh38_flippedsites_bed.ipynb: read spreadsheet and create bedfile
+in GRCh37 coordinates
+
+Remapped using default parameters (GRCh37->GRCh38)
+
+CheckRemappedSites.ipynb: checked the ref allele in GRCh38 matched the 'alt' allele
+in GRCh37, then flipped ref/alt in 'name' field of bed.
+A handful of sites failed. This seemed to be a combination of sequences changing
+orientation between GRCh37 and GRCh38, or possibly some 1-off errors. A couple of sites
+appeared to fail, but it was only the secondary alignment that failed.
